@@ -623,7 +623,47 @@ export const CarFormModal: React.FC<CarFormModalProps> = ({
               </div>
             </div>
 
-            {/* Price Negotiable Checkbox & Quick Seller Name */}
+            {/* Contact & Seller Details (All Optional) */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+              <div>
+                <label className="block text-slate-700 font-bold mb-1">
+                  ရောင်းသူအမည် (Seller Name)
+                </label>
+                <input
+                  type="text"
+                  value={sellerName}
+                  onChange={(e) => setSellerName(e.target.value)}
+                  placeholder="ဥပမာ: မင်းသီဟ / Showroom"
+                  className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-slate-900 font-bold focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-slate-700 font-bold mb-1">ဆက်သွယ်ရန် ဖုန်းနံပါတ်</label>
+                <input
+                  type="text"
+                  value={sellerPhone}
+                  onChange={(e) => setSellerPhone(e.target.value)}
+                  placeholder="ဥပမာ: 09 798 123456"
+                  className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-slate-900 font-bold focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-slate-700 font-bold mb-1">
+                  တည်နေရာ / မြို့ (Location) <span className="text-slate-400 font-normal text-[10px]">(မထည့်လဲရ)</span>
+                </label>
+                <input
+                  type="text"
+                  value={sellerLocation}
+                  onChange={(e) => setSellerLocation(e.target.value)}
+                  placeholder="ဥပမာ: ရန်ကုန်၊ မန္တလေး..."
+                  className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-slate-900 focus:outline-none"
+                />
+              </div>
+            </div>
+
+            {/* Price Negotiable Checkbox */}
             <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
               <label className="flex items-center gap-2 cursor-pointer text-slate-700 font-medium">
                 <input
@@ -635,14 +675,14 @@ export const CarFormModal: React.FC<CarFormModalProps> = ({
                 <span>စျေးနှုန်း ညှိနှိုင်းနိုင်ပါသည် (Price Negotiable)</span>
               </label>
 
-              <div className="flex items-center gap-2">
-                <span className="text-slate-600 font-bold">ရောင်းသူအမည်:</span>
+              <div className="flex items-center gap-2 text-slate-500 text-[11px]">
+                <span>Viber (စိတ်ကြိုက်):</span>
                 <input
                   type="text"
-                  value={sellerName}
-                  onChange={(e) => setSellerName(e.target.value)}
-                  placeholder="ဥပမာ: ကိုကျော်စွာ / Showroom"
-                  className="bg-white border border-slate-300 rounded-lg px-2.5 py-1 text-slate-900 font-semibold focus:outline-none w-44"
+                  value={sellerViber}
+                  onChange={(e) => setSellerViber(e.target.value)}
+                  placeholder="09..."
+                  className="bg-white border border-slate-300 rounded-lg px-2 py-1 text-slate-900 text-xs w-32 focus:outline-none"
                 />
               </div>
             </div>

@@ -196,13 +196,19 @@ export const CarCard: React.FC<CarCardProps> = ({
 
         {/* 4. Seller & Contact Row */}
         <div className="flex items-center justify-between text-xs pt-1 border-t border-slate-100">
-          <div className="truncate max-w-[150px]">
+          <div className="truncate max-w-[160px]">
             <span className="text-slate-700 text-[11px] font-semibold block truncate">
-              {car.sellerName}
+              {car.sellerName || 'ကားပိုင်ရှင် / Showroom'}
             </span>
-            <span className="text-slate-400 text-[10px] block truncate">
-              📍 {car.sellerLocation} {car.sourceNote ? `(${car.sourceNote})` : ''}
-            </span>
+            {(car.sellerLocation && car.sellerLocation.trim() !== '') ? (
+              <span className="text-slate-400 text-[10px] block truncate">
+                📍 {car.sellerLocation} {car.sourceNote ? `(${car.sourceNote})` : ''}
+              </span>
+            ) : car.sourceNote ? (
+              <span className="text-slate-400 text-[10px] block truncate">
+                ({car.sourceNote})
+              </span>
+            ) : null}
           </div>
 
           <div className="flex items-center gap-1">

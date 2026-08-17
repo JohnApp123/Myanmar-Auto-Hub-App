@@ -202,9 +202,11 @@ export const CarDetailModal: React.FC<CarDetailModalProps> = ({
                     <span className="text-[10px] text-slate-400 font-semibold block uppercase tracking-wider">ကားရောင်းသူ / အရင်းအမြစ်</span>
                     <p className="font-bold text-slate-900 text-xs flex items-center gap-1.5">
                       <User className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-                      <span>{car.sellerName}</span>
+                      <span>{car.sellerName || 'ကားပိုင်ရှင် / Showroom'}</span>
                     </p>
-                    <p className="text-[11px] text-slate-500">📍 {car.sellerLocation}</p>
+                    {car.sellerLocation && car.sellerLocation.trim() !== '' && (
+                      <p className="text-[11px] text-slate-500">📍 {car.sellerLocation}</p>
+                    )}
                     {car.sourceNote && (
                       <p className="text-[11px] text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200 inline-block mt-1">
                         မှတ်စု: {car.sourceNote}

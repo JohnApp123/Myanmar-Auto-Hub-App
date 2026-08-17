@@ -129,10 +129,12 @@ export const SpecSheetPrintModal: React.FC<SpecSheetPrintModalProps> = ({
           <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 flex justify-between items-center text-xs">
             <div className="space-y-0.5">
               <span className="text-[10px] text-slate-500 font-semibold block uppercase">ရောင်းသူ / ဝယ်ယူခဲ့သည့် အရင်းအမြစ်</span>
-              <span className="font-bold text-slate-900 block">{car.sellerName}</span>
-              <p className="text-slate-600">{car.sellerLocation}</p>
+              <span className="font-bold text-slate-900 block">{car.sellerName || 'ကားပိုင်ရှင် / Showroom'}</span>
+              {car.sellerLocation && car.sellerLocation.trim() !== '' && (
+                <p className="text-slate-600">📍 {car.sellerLocation}</p>
+              )}
               {car.sourceNote && <p className="text-amber-800 font-semibold text-[11px]">မှတ်စု: {car.sourceNote}</p>}
-              <p className="text-slate-900 font-bold">ဖုန်း: {car.sellerPhone} {car.sellerViber ? `| Viber: ${car.sellerViber}` : ''}</p>
+              <p className="text-slate-900 font-bold">ဖုန်း: {car.sellerPhone || '-'} {car.sellerViber ? `| Viber: ${car.sellerViber}` : ''}</p>
             </div>
             <div className="text-right text-[11px] text-slate-500">
               <span className="bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded block mb-1">
