@@ -180,7 +180,10 @@ export const AdminManagementModal: React.FC<AdminManagementModalProps> = ({
                     </div>
 
                     <div className="mt-3 pt-2 border-t border-slate-200/80 flex items-center justify-between text-[11px]">
-                      <span className="font-mono font-bold text-slate-600">PIN: {admin.pin}</span>
+                      <span className="font-mono font-bold text-slate-500 flex items-center gap-1">
+                        <Lock className="w-3 h-3 text-slate-400" />
+                        <span>PIN: ••••</span>
+                      </span>
                       <span className="text-amber-700 font-bold flex items-center gap-0.5">
                         <Edit3 className="w-3 h-3" />
                         <span>{isSelected ? 'ပြင်ဆင်နေသည်' : 'ပြင်ရန်နှိပ်ပါ'}</span>

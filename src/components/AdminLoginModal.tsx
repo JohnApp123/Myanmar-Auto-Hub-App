@@ -119,10 +119,9 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
                     </div>
                   </div>
                   <div className="text-right">
-                    <span className="text-[10px] bg-slate-200/80 px-2 py-0.5 rounded font-mono font-bold text-slate-700">
-                      PIN: {admin.pin}
+                    <span className="block text-[11px] text-amber-700 font-bold hover:underline">
+                      နှိပ်၍ ဝင်မည် →
                     </span>
-                    <span className="block text-[10px] text-amber-700 font-semibold mt-0.5">နှိပ်၍ တန်းဝင်မည် →</span>
                   </div>
                 </button>
               ))}
@@ -141,7 +140,7 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
                   maxLength={6}
                   value={pinInput}
                   onChange={(e) => setPinInput(e.target.value)}
-                  placeholder={`PIN ရိုက်ထည့်ပါ (${currentSelectedAdmin.pin})`}
+                  placeholder="PIN လျှို့ဝှက်နံပါတ် ၄ လုံး ရိုက်ထည့်ပါ"
                   className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-slate-900 font-mono text-center text-lg tracking-widest focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-500/40"
                 />
                 <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />

@@ -219,7 +219,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                       <img src={adm.avatar} alt="" className="w-7 h-7 rounded-full object-cover border" />
                       <div>
                         <p className="font-bold text-slate-900">{adm.name}</p>
-                        <p className="text-[10px] text-slate-500">{adm.roleBurmese} (PIN: {adm.pin})</p>
+                        <p className="text-[10px] text-slate-500">{adm.roleBurmese}</p>
                       </div>
                     </button>
                   ))}
